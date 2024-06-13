@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500&display=swap');
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: url('../imagens/Planet-debris-asteroids-blue-space_1920x1080.jpg') center center/cover;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 10px 25px -8px #000;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 170%;
+    background: url('../imagens/painel-tecido-sublimado-3d-pequeno-principe-002-3x3m-D_NQ_NP_704399-MLB26754871074_022018-F.jpg')no-repeat center center/cover;
+    opacity: .9;
+    z-index: -1;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #000);
+    z-index: -1;
+}
+
+.Menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+
+.pesquisa input {
+    width: 100%;
+    height: 10px;
+    background: #ffffff81;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.582);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 20px 45px 20px 20px;
+    backdrop-filter: blur(20px);
+}
+
+.pesquisa input::placeholder {
+    color: #222222;
+}
+
+.box {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 2;
+    width: 30%;
+    background-color: #313131;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+    width:150px; 
+    height: 62px;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.search {
+    position: absolute;
+    width: 320px;
+    height: 270px;
+    /*border: 1px solid #fff;*/
+    right: 0;
+    top: 40px;
+    z-index: 99999;
+    overflow-y: auto;
+}
+
+.search::-webkit-scrollbar {
+   width: 5px;
+   background: rgb(255, 255, 255, .3);
+   border-radius: 5px;
+   visibility: hidden;
+}
+
+.search::-webkit-scrollbar-thumb {
+    width: 5px;
+    background: rgb(255, 255, 255, .4);
+    border-radius: 5px;
+    visibility: hidden;
+ }
+
+ .search:hover:-webkit-scrollbar {
+    visibility: visible;
+ }
+ 
+ .search:hover:-webkit-scrollbar-thumb {
+    visibility: visible;
+  }
+
+.search.card {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 3px 0px;
+    text-decoration: none;
+    display: none;
+}
+
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 3px 0px;
+    text-decoration: none;
+    backdrop-filter: blur(20px);
+}
+
+.search.card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    z-index: -1;
+}
+
+img {
+    width: 28px;
+    height: 90%;
+    border-radius: 2px;
+    margin-left: 8px;
+}
+
+.search.card.cont h3 {
+    font-size: 15px;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 250px;
+}
+
+.search.card.cont p {
+    font-size: 10px;
+    color: rgb(255, 255, 255, .8);
+}
+
+.content {
+    position: relative;
+    color: #fff;
+    margin-top: 50px;
+    padding-left: 50px;
+}
+
+.content h1 {
+    font-size: 50px;
+}
+
+.content p {
+    font-size: 12px;
+    width: 350px;
+    word-break: break-all;
+}
+
+.content .details {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.content .details h6 {
+    color: rgb(255, 255, 255, .8);
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.content .details h5 {
+    color: rgb(142, 230, 48,);
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.content .details h4 {
+    color: #fff;
+    font-size: 10px;
+    margin-right: 10px;
+}
+
+.content .details h3 {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+}
+
+.content .btns {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.content .btns a{
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #00ffbf, #00202c);
+    border-radius: 5px;
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+    animation: button 1s linear infinite;
+}
+
+@keyframes button {
+    0%{
+        background: linear-gradient(0deg, #00ffbf, #00202c);
+    }
+    12%{
+        background: linear-gradient(45deg, #00ffbf, #00202c);
+    }
+    24%{
+        background: linear-gradient(95deg, #00ffbf, #00202c);
+    }
+    36%{
+        background: linear-gradient(145deg, #00ffbf, #00202c);
+    }
+    48%{
+        background: linear-gradient(195deg, #00ffbf, #00202c);
+    }
+    60%{
+        background: linear-gradient(245deg, #00ffbf, #00202c);
+    }
+    72%{
+        background: linear-gradient(295deg, #00ffbf, #00202c);
+    }
+    100%{
+        background: linear-gradient(360deg, #00ffbf, #00202c);
+    }
+}
+
+section {
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    bottom: 20px;
+    color: #fff;
+    background: transparent;
+    backdrop-filter: blur(20px);
+}
+
+section .cards {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /*border: 1px solid #fff;*/
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+section .cards::-webkit-scrollbar{
+    display: none;
+}
+
+section .cards .card{
+   position: relative;
+   min-width: 130px;
+   height: 180px;
+   /*border: 1px solid #fff;*/
+   border-radius: 8px;
+   margin-right: 10px;
+   background: #000;
+   transition: .3s linear;
+}
+
+section .cards .card .poster{
+    min-width: 88%;
+    height: 100%;
+    border-radius: 8px;
+    position: relative;
+}
+
+section .cards .card:hover {
+    width: 300px;
+    overflow: hidden;
+}
+
+section .cards .card .rest_card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    opacity: 0;
+    transition: 1s linear;
+}
+
+section .cards .card .rest_card img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+section .cards .card .rest_card::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #000);
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+section .cards .card .rest_card .cont {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    padding: 0px 20px;
+}
+
+section .cards .card .rest_card .cont .sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .cards .card .rest_card .cont .sub p {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(255, 255, 255, .7);
+}
+
+section .cards .card .rest_card .cont .preco p {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(51, 255, 0, 0.7);
+}
+
+section .cards .card .rest_card .cont .sub h3 {
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+section .cards .card .rest_card .cont .sub h3 span{
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+section .cards .card .rest_card .cont .sub h3 i{
+    margin-right: 3px;
+}
+
+section .cards .card:hover .rest_card{
+    opacity: 1;
+}
+
+
+
